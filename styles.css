@@ -22,6 +22,17 @@ header {
     top: 0;
     z-index: 100;
 }
+.special-button {
+    color: #ffffff; /* Cor do texto */
+    background-color: #836FFF; /* Cor de fundo especial */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.special-button:hover {
+    background-color: #00BFFF; /* Cor ao passar o mouse */
+    color: #ffffff;
+}
 
 nav ul {
     display: flex;
@@ -37,11 +48,11 @@ nav ul li a {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 nav ul li a:hover {
-    background-color: #ffcc00;
+    background-color: #00BFFF;
     border-radius: 5px;
 }
 
@@ -53,11 +64,30 @@ h1 {
     margin-bottom: 12vh;
     letter-spacing: 5px;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #ffcc00, #ff6600, #00ccff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: glow 3s infinite alternate;
+    color: #00BFFF;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.6),   /* Sombra para dar um efeito mais nítido */
+        4px 4px 8px rgba(0, 0, 0, 0.5),   /* Sombra mais distante para maior profundidade */
+        6px 6px 12px rgba(0, 0, 0, 0.4),  /* Sombra ainda mais distante */
+        8px 8px 16px rgba(0, 0, 0, 0.3);  /* Última sombra para maior realismo */
+    animation: glow 15s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.6),
+            4px 4px 8px rgba(0, 0, 0, 0.5),
+            6px 6px 12px rgba(0, 0, 0, 0.4),
+            8px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        text-shadow: 
+            0 0 15px #00BFFF, 
+            0 0 30px #00BFFF, 
+            0 0 45px #00BFFF, 
+            0 0 60px #00BFFF;
+    }
 }
 
 /* Seção de conteúdo */
@@ -87,10 +117,6 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.box:hover {
-    transform: rotate(0deg);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
-}
 
 /* Texto dentro das caixas */
 .box h2 {
@@ -98,39 +124,6 @@ h1 {
     font-weight: normal;
     color: #fff;
     margin-bottom: 15px;
-}
-
-/* Botão estiloso */
-.button {
-    background-color: #ffcc00;
-    color: #000;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.button:hover {
-    background-color: #ff6600;
-}
-
-/* Animação de glow */
-@keyframes glow {
-    0% {
-        text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.8),
-                     4px 4px 20px rgba(255, 102, 0, 0.8),
-                     6px 6px 30px rgba(0, 204, 255, 0.8);
-    }
-    100% {
-        text-shadow: 2px 2px 10px rgba(255, 102, 0, 0.8),
-                     4px 4px 20px rgba(0, 204, 255, 0.8),
-                     6px 6px 30px rgba(255, 204, 0, 0.8);
-    }
 }
 
 /* Responsividade para telas menores */
