@@ -73,23 +73,6 @@ h1 {
     animation: glow 15s infinite alternate;
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 
-            2px 2px 4px rgba(0, 0, 0, 0.6),
-            4px 4px 8px rgba(0, 0, 0, 0.5),
-            6px 6px 12px rgba(0, 0, 0, 0.4),
-            8px 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        text-shadow: 
-            0 0 15px #00BFFF, 
-            0 0 30px #00BFFF, 
-            0 0 45px #00BFFF, 
-            0 0 60px #00BFFF;
-    }
-}
-
 /* Seção de conteúdo */
 .content {
     display: flex;
@@ -131,17 +114,7 @@ h1 {
     h1 {
         font-size: 1.5em;
     }
-
-    .emoji {
-        font-size: 3em;
-    }
-
-    .button {
-        width: 100%;
-        padding: 15px;
-        font-size: 1.2em;
-    }
-
+	
     p {
         font-size: 1em;
     }
@@ -170,5 +143,21 @@ h1 {
     }
     100% {
         transform: scale(1);
+    }
+}
+@keyframes glow {
+    0% {
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.6),
+            4px 4px 8px rgba(0, 0, 0, 0.5),
+            6px 6px 12px rgba(0, 0, 0, 0.4),
+            8px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        text-shadow: 
+            0 0 15px #00BFFF, 
+            0 0 30px #00BFFF, 
+            0 0 45px #00BFFF, 
+            0 0 60px #00BFFF;
     }
 }
