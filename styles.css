@@ -147,19 +147,20 @@ h1 {
 		z-index: 10;
 		transition: all 0.3s ease; /* Transição suave */
 	}
-
+	/* Menu visível quando a classe 'active' for adicionada */
+    ul.active {
+        display: block; /* Exibe o menu */
+    }
+	
     li {
         margin-bottom: 15px;
+		list-style: none;
     }
 
     nav {
         position: relative;
     }
 
-	/* Menu visível quando a classe 'active' for adicionada */
-    ul.active {
-        display: block; /* Exibe o menu */
-    }
 }
 
 /* Animações */
