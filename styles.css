@@ -132,19 +132,21 @@ h1 {
     /* Torna o menu toggle visível apenas em telas pequenas */
     .menu-toggle {
         display: block;
+		cursor: pointer;
     }
 
 	ul {
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 35px;  /* Espaço abaixo do menu */
-        left: 0;
-        padding: 20px;
-        display: none;  /* Inicialmente oculto */
-        z-index: 10;  /* Garante que o menu fique acima de outros elementos */
-    }
+		display: none; /* Inicialmente oculto */
+		flex-direction: column;
+		width: 100%;
+		background-color: #333;
+		position: absolute;
+		top: 35px;  /* Espaço abaixo do menu */
+		left: 0;
+		padding: 20px;
+		z-index: 10;
+		transition: all 0.3s ease; /* Transição suave */
+	}
 
     li {
         margin-bottom: 15px;
