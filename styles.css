@@ -60,7 +60,7 @@ nav ul li a:hover {
 h1 {
     font-size: 4em;
     font-weight: bold;
-    margin-top: 20vh;
+    margin-top: 12vh;
     margin-bottom: 12vh;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -100,7 +100,6 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 /* Texto dentro das caixas */
 .box h2 {
     font-size: 1.8em;
@@ -123,7 +122,7 @@ h1 {
 @media (max-width: 600px) {
     h1 {
         font-size: 3em; /* Ajuste do tamanho da fonte em dispositivos móveis */
-        color: #00BFFF 
+        color: #00BFFF;
         text-shadow: 
             3px 3px 5px rgba(0, 0, 0, 0.3),
             6px 6px 10px rgba(0, 0, 0, 0.25),
@@ -149,17 +148,19 @@ h1 {
 
     li {
         margin-bottom: 15px;
-}
+    }
 
     nav {
         position: relative;
-	}
+    }
+
 	/* Menu visível quando a classe 'active' for adicionada */
     ul.active {
         display: block; /* Exibe o menu */
     }
-	
+}
 
+/* Animações */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -171,6 +172,7 @@ h1 {
         transform: scale(1);
     }
 }
+
 @keyframes glow {
     0% {
         text-shadow: 
