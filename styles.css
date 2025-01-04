@@ -109,17 +109,31 @@ h1 {
     margin-bottom: 15px;
 }
 
+/* Botão de menu (menu toggle) visível apenas no celular */
+.menu-toggle {
+    display: none; /* Inicialmente invisível em telas grandes */
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2em;
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 600px) {
     h1 {
         font-size: 3em; /* Ajuste do tamanho da fonte em dispositivos móveis */
-        color: #00BFFF !important; /* Força a cor azul em dispositivos móveis */
+        color: #00BFFF 
         text-shadow: 
             3px 3px 5px rgba(0, 0, 0, 0.3),
             6px 6px 10px rgba(0, 0, 0, 0.25),
             9px 9px 15px rgba(0, 0, 0, 0.15);
     }
-}
+		
+    /* Torna o menu toggle visível apenas em telas pequenas */
+    .menu-toggle {
+        display: block;
+    }
 
 	ul {
         flex-direction: column;
@@ -140,21 +154,11 @@ h1 {
     nav {
         position: relative;
 	}
-	
-	.menu-toggle {
-        display: block;
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        cursor: pointer;
-        font-size: 2em;
-	}
-
-    /* Quando o menu estiver visível */
+	/* Menu visível quando a classe 'active' for adicionada */
     ul.active {
-        display: block;
+        display: block; /* Exibe o menu */
     }
-}
+	
 
 @keyframes pulse {
     0% {
