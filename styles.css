@@ -8,10 +8,45 @@
 /* Corpo com fundo preto */
 body {
     background-color: #000;
+	display: flex;
+	flex-direction: column; /* Organiza elementos verticalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da janela */
     font-family: 'Arial', sans-serif;
     color: #fff;
     text-align: center;
-    overflow: auto;
+    width: 100vw; /* Ocupa 100% da largura da tela */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    margin: 0;
+}
+
+
+/* Efeito de raios */
+.rain {
+    position: absolute;
+    top: -100px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.rain-drop {
+    position: absolute;
+    background-color: #00BFFF;
+    width: 1px;
+    height: 15px;
+    opacity: 0.9;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh); /* Raio cai até o final da tela */
+    }
 }
 
 /* Estilo do menu superior */
@@ -66,20 +101,28 @@ h1 {
     text-transform: uppercase;
     color: #00BFFF;
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.6),   /* Sombra para dar um efeito mais nítido */
-        4px 4px 8px rgba(0, 0, 0, 0.5),   /* Sombra mais distante para maior profundidade */
-        6px 6px 12px rgba(0, 0, 0, 0.4),  /* Sombra ainda mais distante */
-        8px 8px 16px rgba(0, 0, 0, 0.3);  /* Última sombra para maior realismo */
+        2px 2px 4px rgba(0, 0, 0, 0.6),   
+        4px 4px 8px rgba(0, 0, 0, 0.5),   
+        6px 6px 12px rgba(0, 0, 0, 0.4),  
+        8px 8px 16px rgba(0, 0, 0, 0.3);  
     animation: glow 15s infinite alternate;
 }
 
 /* Seção de conteúdo */
 .content {
     display: flex;
+	flex: 1; /* Expande para ocupar o máximo de espaço possível */
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
     gap: 80px;
+    padding-bottom: 80px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 80px;
+	padding-bottom: 80px; /* Adiciona espaço no final da página */
 }
 
 .thumbnail {
@@ -115,7 +158,7 @@ h1 {
 
 /* Botão de menu (menu toggle) visível apenas no celular */
 .menu-toggle {
-    display: none; /* Inicialmente invisível em telas grandes */
+    display: none;
     background-color: #333;
     color: white;
     padding: 10px;
@@ -126,74 +169,77 @@ h1 {
 /* Responsividade para telas menores */
 @media (max-width: 600px) {
     h1 {
-        font-size: 3em; /* Ajuste do tamanho da fonte em dispositivos móveis */
-        color: #00BFFF;
-        text-shadow: 
-            3px 3px 5px rgba(0, 0, 0, 0.3),
-            6px 6px 10px rgba(0, 0, 0, 0.25),
-            9px 9px 15px rgba(0, 0, 0, 0.15);
+        font-size: 3em;
     }
-        
-    /* Torna o menu toggle visível apenas em telas pequenas */
+
     .menu-toggle {
         display: block;
         cursor: pointer;
     }
 
     .menu {
-        display: none; /* Inicialmente oculto */
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: #333;
         position: absolute;
-        top: 35px;  /* Espaço abaixo do menu */
         left: 0;
         padding: 20px;
-        z-index: 10;
-        transition: all 0.3s ease; /* Transição suave */
     }
-    /* Menu visível quando a classe 'active' for adicionada */
     .menu.active {
-        display: block; /* Exibe o menu */
+        display: block;
     }
-    
+
     li {
-        margin-bottom: 15px;
-        list-style: none;
+        margin-bottom: 22px;
     }
 
     nav {
         position: relative;
     }
-
 }
 
 /* Animações */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 @keyframes glow {
     0% {
         text-shadow: 
-            2px 2px 4px rgba(0, 0, 0, 0.6),
-            4px 4px 8px rgba(0, 0, 0, 0.5),
-            6px 6px 12px rgba(0, 0, 0, 0.4),
-            8px 8px 16px rgba(0, 0, 0, 0.3);
+            0px 0px 5px rgba(0, 0, 255, 0.6),  /* Luz inicial suave */
+            -5px -5px 10px rgba(0, 191, 255, 0.5),  /* Luz em direção oposta */
+            5px 5px 15px rgba(0, 0, 255, 0.4),  /* Luz mais intensa à direita */
+            -10px -10px 20px rgba(0, 191, 255, 0.3); /* Luz mais intensa à esquerda */
+    }
+    50% {
+        text-shadow: 
+            0px 0px 15px rgba(0, 0, 255, 1),  /* Luz central intensa */
+            10px -10px 20px rgba(0, 191, 255, 0.8),  /* Luz em diagonal */
+            -10px 10px 30px rgba(0, 0, 255, 0.7),  /* Luz inversa */
+            15px 15px 40px rgba(0, 191, 255, 0.6);  /* Luz mais ampla */
     }
     100% {
         text-shadow: 
-            0 0 15px #00BFFF, 
-            0 0 30px #00BFFF, 
-            0 0 45px #00BFFF, 
-            0 0 60px #00BFFF;
+            0px 0px 20px #00BFFF,  /* Luz máxima central */
+            -15px 15px 30px #00BFFF,  /* Luz inversa ampla */
+            15px -15px 40px #00BFFF,  /* Luz ampla em diagonal */
+            -20px -20px 50px #00BFFF;  /* Luz intensa em direção oposta */
     }
 }
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garantir que o canvas fique no fundo */
+}
+footer {
+    background-color: #111;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+    position: relative; /* Usa position: relative para posicionamento padrão */
+    width: 100%;
+    margin-top: 30px; /* Espaço antes do rodapé */
+    padding-bottom: 30px; /* Espaço abaixo do rodapé */
+}
+
