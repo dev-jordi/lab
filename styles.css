@@ -156,11 +156,6 @@ h1 {
     }
 }
 
-/* Exemplo de ícone de hambúrguer (menu toggle) */
-.menu-toggle {
-    display: none; /* Inicialmente oculto, visível apenas em dispositivos móveis */
-}
-
 @keyframes pulse {
     0% {
         transform: scale(1);
