@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Dev Jordi - Lab</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="rain"></div> <!-- Container para os raios -->
+    
     <header>
         <div class="menu-toggle">☰</div>
         <nav>
             <ul class="menu">
-                <li><a href="#box1">About Me</a></li>
+                <li><a href="about.html">About Me</a></li> <!-- Link para a página About Me -->
                 <li><a href="#box2">Projects</a></li>
-                <li><a href="#box3">Thoughts</a></li>
                 <li><a href="https://github.com/dev-jordi" class="special-button">GIT</a></li>
             </ul>
         </nav>
@@ -23,29 +23,31 @@
 
     <h1>DEV JORDI</h1>
 
-    <div class="content">
-        <div class="box" id="box1">
-            <h2>👾 Explore 👾</h2>
-            <p></p>
-            <img src="img/1.png" alt="Miniatura" class="thumbnail">
+    <main>
+        <div class="content">
+            <div class="box" id="box1">
+                <h2>👾 Explore 👾</h2>
+                <p></p>
+                <img src="img/1.png" alt="Miniatura" class="thumbnail">
+            </div>
+            <div class="box" id="box2">
+                <h2>🐍 Python 🐍</h2>
+                <p></p>
+                <img src="img/2.png" alt="Miniatura" class="thumbnail">
+            </div>
+            <div class="box" id="box3">
+                <h2>🚀 Arriving 🚀</h2>
+                <p></p>
+                <img src="img/3.png" alt="Miniatura" class="thumbnail">
+            </div>
         </div>
-        <div class="box" id="box2">
-            <h2>🐍 Python 🐍</h2>
-            <p></p>
-            <img src="img/2.png" alt="Miniatura" class="thumbnail">
-        </div>
-        <div class="box" id="box3">
-            <h2>🚀 Arriving 🚀</h2>
-            <p></p>
-            <img src="img/3.png" alt="Miniatura" class="thumbnail">
-        </div>
-    </div>
+    </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Dev Jordi. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <script src="js/menu.js"></script>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Dev Jordi. Todos os direitos reservados.</p>
+    </div>
+</footer>
+<script src="js/menu.js"></script>
 </body>
 </html>
