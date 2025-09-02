@@ -34,3 +34,28 @@ function createRainDrop() {
 
 // Cria múltiplas gotas de chuva continuamente
 setInterval(createRainDrop, 700);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".box");
+
+    boxes.forEach(box => {
+        box.addEventListener("click", () => {
+            const isActive = box.classList.contains("active");
+
+            // remove todas classes
+            boxes.forEach(b => {
+                b.classList.remove("active");
+                b.classList.remove("inactive-hidden");
+            });
+
+            if (!isActive) {
+                // ativa a clicada
+                box.classList.add("active");
+                // esconde as outras
+                boxes.forEach(b => {
+                    if (b !== box) b.classList.add("inactive-hidden");
+                });
+            }
+        });
+    });
+});
