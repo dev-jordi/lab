@@ -59,3 +59,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+const wall = document.querySelector('.wall');
+const imgs = wall.querySelectorAll('img');
+
+imgs.forEach(img => {
+    // Limita a posição para não encostar nas bordas (10% a 85%)
+    const x = 10 + Math.random() * 75; 
+    const y = 10 + Math.random() * 75; 
+
+    // Rotação menor (-5° a 5°)
+    const rotate = (Math.random() - 0.5) * 10; 
+
+    // Escala mais próxima de 1 (0.9 a 1.05)
+    const scale = 0.9 + Math.random() * 0.15; 
+
+    img.style.position = 'absolute';
+    img.style.left = x + '%';
+    img.style.top = y + '%';
+    img.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+});
