@@ -21,7 +21,7 @@
     </nav>
   </header>
 
-  <h1>🚧 Under Construction 🚧</h1>
+  <h1>🚧 Under Construction</h1>
 
   <main>
     <div class="content">
@@ -35,12 +35,18 @@
       </div>
 
       <div class="box" id="box2">
-  <div id="emoji-sniper"></div>
+  <h2>🎯 Emoji Sniper</h2>
+  <div id="emoji-sniper-container">
+    <canvas id="emoji-sniper-canvas"></canvas>
+  </div>
 </div>
 
 <script type="module">
   import { EmojiSniperGame } from "./js/emoji-sniper.js";
-  new EmojiSniperGame("emoji-sniper");
+
+  // inicializar o jogo dentro do canvas
+  const canvas = document.getElementById("emoji-sniper-canvas");
+  new EmojiSniperGame(canvas);
 </script>
       <div class="box" id="box3">
         <h2>🚀 Arriving</h2>
