@@ -1,3 +1,5 @@
+////////////// INICIO MENU //////////////
+
 // Seleciona o botão de menu e o menu
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('ul.menu'); // Seletor mais específico
@@ -12,14 +14,17 @@ if (menuToggle && menu) {
 } else {
     console.error("Botão de menu ou menu não encontrados!");
 }
-////////////////////////////////////////////////////////////////////////////////// menu
+////////////// ----------- //////////////
+
+////////////// INICIO RAIOS DA PÁGINA //////////////
 
 const rainContainer = document.querySelector('.rain');
 
 function createRainDrop() {
     const rainDrop = document.createElement('div');
     rainDrop.classList.add('rain-drop');
-    rainDrop.style.left = Math.random() * 100 + 'vw'; // Distribui os raios aleatoriamente na largura da tela
+    rainDrop.style.left = Math.random() * 100 + 'vw'; 
+    // Distribui os raios aleatoriamente na largura da tela
 
     // Calcula a altura total da página
     const pageHeight = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight);
@@ -35,31 +40,9 @@ function createRainDrop() {
 // Cria múltiplas gotas de chuva continuamente
 setInterval(createRainDrop, 700);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const boxes = document.querySelectorAll(".box");
+////////////// ----------- //////////////
 
-    boxes.forEach(box => {
-        box.addEventListener("click", () => {
-            const isActive = box.classList.contains("active");
-
-            // remove todas classes
-            boxes.forEach(b => {
-                b.classList.remove("active");
-                b.classList.remove("inactive-hidden");
-            });
-
-            if (!isActive) {
-                // ativa a clicada
-                box.classList.add("active");
-                // esconde as outras
-                boxes.forEach(b => {
-                    if (b !== box) b.classList.add("inactive-hidden");
-                });
-            }
-        });
-    });
-});
-
+<<<<<<< Updated upstream
 const wall = document.querySelector('.wall');
 const imgs = wall.querySelectorAll('img');
 
@@ -79,3 +62,6 @@ imgs.forEach(img => {
     img.style.top = y + '%';
     img.style.transform = `rotate(${rotate}deg) scale(${scale})`;
 });
+=======
+////////////// ----------- //////////////
+>>>>>>> Stashed changes

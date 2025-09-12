@@ -13,3 +13,15 @@ Este repositório contém uma coleção de projetos e experimentos em linguagens
 - **HTML/CSS** 🌐
 - **JavaScript**
 - **GitHub Pages**
+
+## ♨ Rodar Servidor python 
+
+```bash
+python3 -m http.server 3000
+```
+
+## Acesse
+
+```bash
+http://localhost:3000/index.html
+```
