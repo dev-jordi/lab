@@ -152,20 +152,15 @@ h1 {
 
 .box .box-content {
     width: 80%;
-    box-sizing: border-box;
-    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    gap: 10px;
 }
 
 .box .box-content a {
     display: inline-block;
-    margin: 5px;
-    padding: 8px 12px;
     background: #fff;
     color: #2575fc;
     border-radius: 6px;
