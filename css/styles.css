@@ -164,7 +164,7 @@ h1 {
 
 .box .box-content a {
     display: inline-block;
-    margin-top: 10px;
+    margin: 5px;
     padding: 8px 12px;
     background: #fff;
     color: #2575fc;
