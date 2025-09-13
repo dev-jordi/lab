@@ -25,3 +25,8 @@ python3 -m http.server 3000
 ```bash
 http://localhost:3000/index.html
 ```
+
+## Melhorarias a serem feitas:
+
+- exibir erros débug com js
+- adaptar pág a dispositivos móveis
