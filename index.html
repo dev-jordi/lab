@@ -2,71 +2,76 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Dev Jordi - Lab</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <div class="rain"></div> <!-- Container para os raios -->
+    <link rel="icon" href="img/cronos.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <header>
+</head>
+<header>
     <div class="menu-toggle">☰</div>
     <nav>
       <ul class="menu">
-        <li><a href="about.html">About Me</a></li> <!-- Link para a página About Me -->
-        <li><a href="#box2">Projects</a></li>
+        <li><a href="about.html">About Me</a></li>
         <li><a href="https://github.com/dev-jordi" class="special-button">GIT</a></li>
       </ul>
     </nav>
   </header>
 
-  <h1>🚧 Under Construction</h1>
+<body>
+  <section class="hero">
+  <h1>Dev Jordi 🚀</h1>
+  <p>Explorando Web, Programação e Blockchain.</p>
+  <br>
+</section>
+
+  <div class="rain"></div> <!-- Container para os raios -->
 
   <main>
     <div class="content">
-      <div class="box" id="box3">
-        <h2>🚀 Arriving</h2>
-        <img class="thumbnail" src="img/3.png" alt="Arriving">
-        <div class="box-content">
-          <p>Desbrave o universo blockchain com segurança e inovação.</p>
-          <a href="#">Saiba mais</a>
-        </div>
-      </div>
-
-      <div class="box" id="box2">
-  <h2>🎯 Emoji Sniper</h2>
-  <div id="emoji-sniper-container">
-    <canvas id="emoji-sniper-canvas"></canvas>
-  </div>
+      <!-- Box 1 -->
+      <!-- Box 3 - Debug Python -->
+<div class="box" id="box1">
+  <h2>🐍 Python Debugger</h2>
+  <div id="python-debug-container"></div>
 </div>
-
-<script type="module">
-  import { EmojiSniperGame } from "./js/emoji-sniper.js";
-
-  // inicializar o jogo dentro do canvas
-  const canvas = document.getElementById("emoji-sniper-canvas");
-  new EmojiSniperGame(canvas);
-</script>
-      <div class="box" id="box3">
-        <h2>🚀 Arriving</h2>
-        <img class="thumbnail" src="img/3.png" alt="Arriving">
-        <div class="box-content">
-          <p>Desbrave o universo blockchain com segurança e inovação.</p>
-          <a href="#">Saiba mais</a>
+      <!-- Box 2 - Jogo -->
+      <div class="box" id="box2">
+        <h2>🎯 Emoji Sniper Game</h2>
+        <div id="emoji-sniper-container">
+          <canvas id="emoji-sniper-canvas"></canvas>
         </div>
       </div>
     </div>
   </main>
 
-<footer>
+  <footer>
     <div class="footer-content">
-        <p>&copy; <strong>2025 Dev Jordi</strong>. Todos os direitos reservados.</p>
+      <p>&copy; <strong>2025 Dev Jordi</strong>. Todos os direitos reservados.</p>
     </div>
-</footer>
-<script src="js/menu.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+  import { EmojiSniperGame } from "./js/emoji-sniper.js";
+
+  const canvas = document.getElementById("emoji-sniper-canvas");
+  new EmojiSniperGame(canvas, 600, 400); // canvas existente
+</script>
+  <script src="js/menu.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+
+<script type="module">
+import { PythonDebugger } from './js/python-debugger.js';
+
+// Inicializa o debugger na div
+new PythonDebugger("python-debug-container");
+</script>
+
 </body>
 </html>

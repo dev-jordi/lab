@@ -7,7 +7,7 @@ class Target {
     this.type = type; // "animal" ou "person"
     this.size = 36;
     this.x = Math.random() * (game.width - this.size);
-    this.y = Math.random() * (game.height / 2);
+    this.y = Math.random() * (game.height / 2 - this.size);
     this.dx = (Math.random() * 2 - 1) * 2;
     this.dy = (Math.random() * 2 - 1) * 2;
   }
@@ -38,18 +38,13 @@ class Target {
 }
 
 export class EmojiSniperGame {
-  constructor(containerId, width = 600, height = 400) {
-    this.container = document.getElementById(containerId);
+  constructor(canvasElement, width = 600, height = 400) {
+    this.canvas = canvasElement;  // pega o canvas que já existe
     this.width = width;
     this.height = height;
 
-    this.canvas = document.createElement("canvas");
     this.canvas.width = this.width;
     this.canvas.height = this.height;
-    this.canvas.style.border = "2px solid #333";
-    this.canvas.style.background = "#0f1724";
-    this.container.appendChild(this.canvas);
-
     this.ctx = this.canvas.getContext("2d");
 
     this.targets = [];
@@ -64,8 +59,8 @@ export class EmojiSniperGame {
 
     this.canvas.addEventListener("mousemove", (e) => {
       const rect = this.canvas.getBoundingClientRect();
-      this.crosshair.x = e.clientX - rect.left;
-      this.crosshair.y = e.clientY - rect.top;
+      this.crosshair.x = ((e.clientX - rect.left) / rect.width) * this.width;
+      this.crosshair.y = ((e.clientY - rect.top) / rect.height) * this.height;
     });
 
     this.canvas.addEventListener("click", () => this.shoot());
@@ -116,10 +111,13 @@ export class EmojiSniperGame {
 
   loop() {
     if (!this.running) return;
+
+    // limpa canvas
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.ctx.fillStyle = "#0f1724";
     this.ctx.fillRect(0, 0, this.width, this.height);
 
+    // atualiza e desenha alvos
     for (const t of this.targets) {
       t.update();
       t.draw(this.ctx);

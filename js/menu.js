@@ -1,5 +1,3 @@
-////////////// INICIO MENU //////////////
-
 // Seleciona o botão de menu e o menu
 const menuToggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('ul.menu'); // Seletor mais específico
@@ -14,17 +12,14 @@ if (menuToggle && menu) {
 } else {
     console.error("Botão de menu ou menu não encontrados!");
 }
-////////////// ----------- //////////////
-
-////////////// INICIO RAIOS DA PÁGINA //////////////
+////////////////////////////////////////////////////////////////////////////////// menu
 
 const rainContainer = document.querySelector('.rain');
 
 function createRainDrop() {
     const rainDrop = document.createElement('div');
     rainDrop.classList.add('rain-drop');
-    rainDrop.style.left = Math.random() * 100 + 'vw'; 
-    // Distribui os raios aleatoriamente na largura da tela
+    rainDrop.style.left = Math.random() * 100 + 'vw'; // Distribui os raios aleatoriamente na largura da tela
 
     // Calcula a altura total da página
     const pageHeight = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight);
@@ -40,28 +35,28 @@ function createRainDrop() {
 // Cria múltiplas gotas de chuva continuamente
 setInterval(createRainDrop, 700);
 
-////////////// ----------- //////////////
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".box");
 
-<<<<<<< Updated upstream
-const wall = document.querySelector('.wall');
-const imgs = wall.querySelectorAll('img');
+    boxes.forEach(box => {
+        box.addEventListener("click", () => {
+            const isActive = box.classList.contains("active");
 
-imgs.forEach(img => {
-    // Limita a posição para não encostar nas bordas (10% a 85%)
-    const x = 10 + Math.random() * 75; 
-    const y = 10 + Math.random() * 75; 
+            // remove todas classes
+            boxes.forEach(b => {
+                b.classList.remove("active");
+                b.classList.remove("inactive-hidden");
+            });
 
-    // Rotação menor (-5° a 5°)
-    const rotate = (Math.random() - 0.5) * 10; 
-
-    // Escala mais próxima de 1 (0.9 a 1.05)
-    const scale = 0.9 + Math.random() * 0.15; 
-
-    img.style.position = 'absolute';
-    img.style.left = x + '%';
-    img.style.top = y + '%';
-    img.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+            if (!isActive) {
+                // ativa a clicada
+                box.classList.add("active");
+                // esconde as outras
+                boxes.forEach(b => {
+                    if (b !== box) b.classList.add("inactive-hidden");
+                });
+            }
+        });
+    });
 });
-=======
-////////////// ----------- //////////////
->>>>>>> Stashed changes
+

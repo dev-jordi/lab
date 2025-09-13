@@ -6,16 +6,23 @@
 }
 
 body {
-    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    background: #0d1117; /* dark elegante */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
-    color: #fff;
+    color: #c9d1d9;
     text-align: center;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden; /* evita qualquer rolagem lateral */
+    overflow-x: hidden; /* evita rolagem lateral */
+    margin: 0;
+    padding: 0;
+    h1, h2 {
+    padding-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+}
 }
 
 main {
@@ -55,6 +62,15 @@ header {
     top: 0;
     z-index: 100;
 }
+
+.thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 
 nav ul {
     display: flex;
@@ -102,9 +118,9 @@ nav ul li a:hover {
 
 /* ===================== TÍTULOS ===================== */
 h1 {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
-    margin: 12vh 0;
+    margin: 4vh 0;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #00BFFF;
@@ -116,7 +132,7 @@ h1 {
     animation: glow 15s infinite alternate;
 }
 
-/* ===================== CONTENT / BOXES ===================== */
+/* ===================== CONTENT ===================== */
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -127,27 +143,28 @@ h1 {
     box-sizing: border-box;
 }
 
+/* ===================== BOXES ===================== */
 .box {
-    flex: 1 1 calc(33.33% - 20px); /* 3 por linha */
-    min-width: 250px;
+    width: 500px;           /* largura fixa */
+    height: 500px;          /* altura fixa */
     background-color: rgba(255,255,255,0.06);
-    border-radius: 20px;
-    padding: 18px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
-    border: 2px solid rgba(0,191,255,0.3);
+    justify-content: center; /* centraliza o conteúdo */
+    border: 1px solid rgba(0,191,255,0.3);
     transition: all 0.3s ease;
-
-    /* ajuste de altura */
-    min-height: 500px; /* altura mínima */
-    height: auto;      /* cresce conforme o conteúdo */
 }
 
-    /* deixa jogos/canvas responsivos dentro da box */
+.box:hover {
+    border-color: #00BFFF;
+    box-shadow: 0 0 40px #00BFFF;
+}
+
+/* Responsividade de conteúdos dentro das boxes */
 .box canvas, 
 .box iframe, 
 .box img {
@@ -157,15 +174,12 @@ h1 {
     border-radius: 10px;
 }
 
-
-.box:hover {
-    border-color: #00BFFF;
-    box-shadow: 0 0 40px #00BFFF;
-}
-
+/* ===================== BOX CONTENT ===================== */
 .box .box-content {
     width: 90%;
-    height: 90%
+    height: 90%;
+    display: flex;              /* necessário para align-items e justify-content */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -178,11 +192,58 @@ h1 {
     border-radius: 6px;
     text-decoration: none;
     transition: transform 0.2s ease, background 0.2s ease;
+    padding: 8px 14px;
 }
 
 .box .box-content a:hover {
     transform: translateY(-3px);
     background: #f0f0f0;
+}
+
+/* ===================== PROFILE / CENTER TEXT ===================== */
+.center-text {
+    display: flex;
+    flex-direction: column;   /* foto em cima, texto embaixo */
+    align-items: center;      /* centraliza tudo */
+    text-align: center;
+    margin: 25px auto;
+    max-width: 700px;         /* largura máxima do bloco */
+    padding: 15px;
+    background: rgba(255,255,255,0.05); /* fundo leve translúcido */
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    border: 1px solid rgba(0,191,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.center-text:hover {
+    border-color: #00BFFF;
+    box-shadow: 0 0 30px #00BFFF;
+}
+
+/* ===================== PROFILE IMAGE ===================== */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;  
+    border: 3px solid #00BFFF;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0,191,255,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00BFFF;
+}
+
+/* ===================== PROFILE TEXT ===================== */
+.center-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 12px;
 }
 
 /* ===================== RESPONSIVIDADE ===================== */
@@ -219,7 +280,47 @@ h1 {
 }
 
 /* ===================== FOOTER ===================== */
-#canvas { position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; }
+#canvas { position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; margin: 0 auto; }
+
+#emoji-sniper-canvas {
+  display: block;
+  margin: 0 auto; /* centraliza horizontalmente */
+  border: 2px solid #333;
+}
+
+.py-debugger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* alinha conteúdo à esquerda */
+    gap: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.py-code {
+    width: 100%;
+    max-width: 400px;
+    color: #fff;   /* texto branco */
+    background: #0d1117;
+    height: 230px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,191,255,0.3);
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+}
+
+.py-run {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #00BFFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.py-run:hover {
+    background-color: #2575fc;
+}
+
 
 footer {
     background-color: #111;
