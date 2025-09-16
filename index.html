@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="img/cronos.jpg">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <header>
@@ -32,45 +33,55 @@
     <div class="content">
       <!-- Box 1 -->
       <!-- Box 3 - Debug Python -->
-<div class="box" id="box1">
-  <h2>🐍 Python Debugger</h2>
-  <div id="python-debug-container"></div>
-</div>
+      <div class="box" id="box1">
+        <h2>🐍 Python Debugger</h2>
+      <div id="python-debug-container"></div>
+    </div>
       <!-- Box 2 - Jogo -->
       <div class="box" id="box2">
-        <h2>🎯 Emoji Sniper Game</h2>
-        <div id="emoji-sniper-container">
+            <h2>🎯 Emoji Sniper Game</h2>
+          <div id="emoji-sniper-container">
           <canvas id="emoji-sniper-canvas"></canvas>
         </div>
       </div>
     </div>
   </main>
 
-  <footer>
+<footer>
     <div class="footer-content">
-      <p>&copy; <strong>2025 Dev Jordi</strong>. Todos os direitos reservados.</p>
+        <p>&copy; <strong>2025 Dev Jordi.</strong></p>
+        <ul class="footer-links">
+            <li><a href="mailto:jordy.branger@hotmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="https://orcid.org/0009-0000-2110-7657" target="_blank"><i class="fab fa-orcid"></i> ORCID</a></li>
+            <li><a href="https://www.linkedin.com/in/jordi-branger" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://instagram.com/o.branger" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://facebook.com/jordy.branger" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://t.me/CronosSon" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+        </ul>
     </div>
-  </footer>
+</footer>
 
-  <!-- Scripts -->
-  <script type="module">
+  <!-- Bibliotecas externas -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Seu script do menu (depende do jQuery/Bootstrap) -->
+<script src="js/menu.js"></script>
+
+<!-- Módulos independentes -->
+<script type="module">
   import { EmojiSniperGame } from "./js/emoji-sniper.js";
-
   const canvas = document.getElementById("emoji-sniper-canvas");
-  new EmojiSniperGame(canvas, 600, 400); // canvas existente
+  new EmojiSniperGame(canvas, 600, 400);
 </script>
-  <script src="js/menu.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Pyodide -->
+
+<!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
 
 <script type="module">
-import { PythonDebugger } from './js/python-debugger.js';
-
-// Inicializa o debugger na div
-new PythonDebugger("python-debug-container");
+  import { PythonDebugger } from './js/python-debugger.js';
+  new PythonDebugger("python-debug-container");
 </script>
 
 </body>

@@ -28,12 +28,13 @@ export class PythonDebugger {
   }
 
   async runCode() {
-    const code = this.textarea.value;
-    try {
-      const result = await this.pyodide.runPythonAsync(code);
-      this.output.textContent = result ?? "✔️ Código executado!";
-    } catch (err) {
-      this.output.textContent = "❌ Erro:\n" + err;
-    }
+  const code = this.textarea.value;
+  try {
+    const result = await this.pyodide.runPythonAsync(code);
+    this.output.textContent = result ?? "✔️ Código executado!";
+  } catch (err) {
+    // janela simples com erro
+    alert("Erro no código Python:\n\n" + err);
   }
+ }
 }
