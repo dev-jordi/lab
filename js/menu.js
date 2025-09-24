@@ -37,26 +37,31 @@ setInterval(createRainDrop, 700);
 
 document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll(".box");
+    const content = document.querySelector(".content");
 
     boxes.forEach(box => {
         box.addEventListener("click", () => {
             const isActive = box.classList.contains("active");
 
-            // remove todas classes
-            boxes.forEach(b => {
-                b.classList.remove("active");
-                b.classList.remove("inactive-hidden");
-            });
-
             if (!isActive) {
-                // ativa a clicada
+                // Remove classes de todos para resetar
+                boxes.forEach(b => {
+                    b.classList.remove("active", "inactive-hidden");
+                });
+                // Ativa a caixa clicada
                 box.classList.add("active");
-                // esconde as outras
+                // Esconde as outras
                 boxes.forEach(b => {
                     if (b !== box) b.classList.add("inactive-hidden");
                 });
+                content.classList.add("active-mode");
+            } else {
+                // Se a caixa clicada já está ativa, desativa tudo
+                boxes.forEach(b => {
+                    b.classList.remove("active", "inactive-hidden");
+                });
+                content.classList.remove("active-mode");
             }
         });
     });
 });
-

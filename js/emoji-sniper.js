@@ -50,7 +50,7 @@ export class EmojiSniperGame {
     this.targets = [];
     this.score = 0;
     this.crosshair = { x: this.width / 2, y: this.height / 2 };
-    this.running = true;
+    this.running = false; // O jogo não começa automaticamente
 
     this.animals = ["🐇", "🦊", "🦆", "🦌"];
     this.people = ["👨", "👩", "👶", "🧓"];
@@ -65,8 +65,29 @@ export class EmojiSniperGame {
 
     this.canvas.addEventListener("click", () => this.shoot());
 
-    requestAnimationFrame(() => this.loop());
+    // O loop não inicia mais no construtor
   }
+
+  start() {
+    if (!this.running) {
+      this.running = true;
+      requestAnimationFrame(() => this.loop());
+    }
+  }
+
+  pause() {
+    this.running = !this.running;
+    if (this.running) {
+      requestAnimationFrame(() => this.loop()); // Retoma o loop
+    } else {
+      this.draw(); // Redesenha para mostrar a mensagem de pausa
+    }
+  }
+
+  stop() {
+    this.running = false;
+  }
+
 
   spawnTarget() {
     const isAnimal = Math.random() < 0.5;
@@ -78,6 +99,7 @@ export class EmojiSniperGame {
   }
 
   shoot() {
+    if (!this.running) return; // Não atira se o jogo estiver pausado
     for (let i = 0; i < this.targets.length; i++) {
       if (this.targets[i].isHit(this.crosshair.x, this.crosshair.y)) {
         if (this.targets[i].type === "animal") this.score += 10;
@@ -89,11 +111,26 @@ export class EmojiSniperGame {
     }
   }
 
+  restart() {
+    this.score = 0;
+    this.targets = [];
+    for (let i = 0; i < 8; i++) this.spawnTarget();
+    this.start();
+  }
+
   drawHUD() {
     this.ctx.fillStyle = "#fff";
     this.ctx.font = "20px Arial";
     this.ctx.textAlign = "left";
     this.ctx.fillText(`Score: ${this.score}`, 10, 20);
+
+    if (!this.running) {
+      this.ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+      this.ctx.font = "40px Arial";
+      this.ctx.textAlign = "center";
+      this.ctx.textBaseline = "middle";
+      this.ctx.fillText("PAUSADO", this.width / 2, this.height / 2);
+    }
   }
 
   drawSniper() {
@@ -109,23 +146,23 @@ export class EmojiSniperGame {
     this.ctx.fillText("🎯", this.crosshair.x, this.crosshair.y);
   }
 
-  loop() {
-    if (!this.running) return;
-
-    // limpa canvas
+  draw() {
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.ctx.fillStyle = "#0f1724";
     this.ctx.fillRect(0, 0, this.width, this.height);
 
-    // atualiza e desenha alvos
     for (const t of this.targets) {
-      t.update();
       t.draw(this.ctx);
     }
-
     this.drawSniper();
     this.drawCrosshair();
     this.drawHUD();
+  }
+
+  loop() {
+    if (!this.running) return;
+    for (const t of this.targets) t.update();
+    this.draw();
 
     requestAnimationFrame(() => this.loop());
   }

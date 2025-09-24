@@ -15,8 +15,7 @@ body {
     color: #c9d1d9;
     text-align: center;
     width: 100vw;
-    height: 100vh;
-    overflow-x: hidden; /* evita rolagem lateral */
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     h1, h2 {
@@ -288,6 +287,27 @@ h1 {
   border: 2px solid #333;
 }
 
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.game-controls button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #00BFFF;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    transition: background-color 0.3s ease;
+}
+
+.game-controls button:hover {
+    background-color: #836FFF;
+}
 .py-debugger {
     display: flex;
     flex-direction: column;

@@ -42,6 +42,11 @@
             <h2>🎯 Emoji Sniper Game</h2>
           <div id="emoji-sniper-container">
           <canvas id="emoji-sniper-canvas"></canvas>
+          <div class="game-controls">
+            <button id="startGameBtn">Iniciar</button>
+            <button id="pauseGameBtn">Pausar</button>
+            <button id="restartGameBtn">Reiniciar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -61,19 +66,24 @@
     </div>
 </footer>
 
-  <!-- Bibliotecas externas -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!-- Seu script do menu (depende do jQuery/Bootstrap) -->
+<!-- Script do menu e interações -->
 <script src="js/menu.js"></script>
 
 <!-- Módulos independentes -->
 <script type="module">
   import { EmojiSniperGame } from "./js/emoji-sniper.js";
   const canvas = document.getElementById("emoji-sniper-canvas");
-  new EmojiSniperGame(canvas, 600, 400);
+  const game = new EmojiSniperGame(canvas, 600, 400);
+
+  document.getElementById("startGameBtn").addEventListener("click", () => game.start());
+  document.getElementById("pauseGameBtn").addEventListener("click", () => game.pause());
+  document.getElementById("restartGameBtn").addEventListener("click", () => game.restart());
+
+  // Inicia o jogo em um estado "parado" para que o usuário clique em "Iniciar"
+  game.stop();
+  // Desenha o estado inicial (sem animação)
+  game.draw();
+
 </script>
 
 <!-- Pyodide -->
