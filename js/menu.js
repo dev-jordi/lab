@@ -12,7 +12,7 @@ if (menuToggle && menu) {
 } else {
     console.error("Botão de menu ou menu não encontrados!");
 }
-////////////////////////////////////////////////////////////////////////////////// menu
+// Menu
 
 const rainContainer = document.querySelector('.rain');
 

@@ -52,7 +52,7 @@ export class EmojiSniperGame {
     this.crosshair = { x: this.width / 2, y: this.height / 2 };
     this.running = false; // O jogo não começa automaticamente
 
-    this.animals = ["🐇", "🦊", "🦆", "🦌"];
+    this.animals = ["🐗", "🐗", "🐗", "🐗"];
     this.people = ["👨", "👩", "👶", "🧓"];
 
     for (let i = 0; i < 8; i++) this.spawnTarget();
@@ -87,7 +87,6 @@ export class EmojiSniperGame {
   stop() {
     this.running = false;
   }
-
 
   spawnTarget() {
     const isAnimal = Math.random() < 0.5;
