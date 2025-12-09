@@ -23,7 +23,7 @@ python3 -m http.server 3000
 ## Acesse
 
 ```bash
-http://localhost:3000/index.html
+http://localhost:3000
 ```
 
 ## Melhorarias a serem feitas:
