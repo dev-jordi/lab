@@ -1,3 +1,6 @@
+<img src="img/banner.png" alt="Banner" style="width:100%; display:block;">
+
+
 # 🧪 Dev Jordi - [🔛 Site 🔛](https://dev-jordi.github.io/lab/) 
 
 
@@ -28,5 +31,5 @@ http://localhost:3000
 
 ## Melhorarias a serem feitas:
 
-- exibir erros débug com js
+- exibir erros debug com js
 - adaptar pág a dispositivos móveis
