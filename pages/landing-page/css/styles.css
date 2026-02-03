@@ -426,30 +426,72 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 3.2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .about-content {
+        gap: 40px;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero {
+        padding: 80px 0;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .hero-text h1 {
         font-size: 2.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
     }
     
     .hero-cta {
         flex-direction: column;
+        gap: 15px;
     }
     
     .btn {
         width: 100%;
         text-align: center;
+        padding: 12px 25px;
+        font-size: 1rem;
     }
     
     .about-content {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .services {
+        padding: 60px 0;
     }
     
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
     }
     
     .nav-links {
@@ -458,9 +500,188 @@ footer {
     
     .section-title {
         font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .contact {
+        padding: 60px 0;
     }
     
     .contact h2 {
         font-size: 2rem;
+    }
+    
+    .contact p {
+        font-size: 1.1rem;
+    }
+    
+    .about, .map-section {
+        padding: 60px 0;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+    
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .services, .about, .contact, .map-section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 25px 15px;
+    }
+    
+    .service-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .about h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .about ul {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .about ul li {
+        margin-bottom: 12px;
+    }
+    
+    .schedule, .contact-info {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .schedule p, .contact-info p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+    
+    .contact h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .map-container {
+        height: 300px;
+        border-radius: 15px;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.2rem;
+    }
+    
+    footer {
+        padding: 25px 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .service-card {
+        padding: 20px 12px;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Orientação landscape para smartphones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .hero-text p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .services, .about, .contact {
+        padding: 30px 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card {
+        padding: 20px 15px;
     }
 }

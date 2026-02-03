@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
-    color: #c9d1d9;
+    color: #c9d1d9 !important; /* força cor clara */
     text-align: center;
     width: 100vw;
     overflow-x: hidden;
@@ -25,6 +25,10 @@ body {
     h1, h2 {
     padding-bottom: 10px;
     font-family: 'JetBrains Mono', monospace;
+    color: #c9d1d9 !important;
+    }
+    p {
+    color: #c9d1d9 !important;
     }
 }
 
@@ -245,23 +249,229 @@ h1 {
 }
 
 /* ===================== RESPONSIVIDADE ===================== */
-@media (max-width: 900px) {
-    .box { flex: 1 1 calc(50% - 20px); height: 200px; }
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .content {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .box {
+        width: calc(50% - 15px);
+        height: 400px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        margin: 3vh 0;
+    }
 }
 
-@media (max-width: 520px) {
-    .content { gap: 12px; padding: 12px; }
-    .box { flex: 1 1 100%; height: 150px; }
+/* Tablets pequenos (600px - 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 101;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .box {
+        width: 100%;
+        height: 350px;
+        margin: 0 auto;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+        letter-spacing: 3px;
+    }
+    
+    .center-text {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
 }
 
+/* Celulares (até 600px) */
 @media (max-width: 600px) {
-    h1 { font-size: 3em; }
+    body {
+        font-size: 14px;
+    }
+    
+    header {
+        padding: 10px 0;
+    }
+    
+    .content {
+        padding: 10px;
+        gap: 15px;
+    }
+    
+    .box {
+        width: 100%;
+        height: 300px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        letter-spacing: 2px;
+        margin: 2vh 0;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .hero p {
+        font-size: 1em;
+        padding: 0 20px;
+    }
+    
+    /* Menu mobile */
+    .menu-toggle { 
+        display: block; 
+    }
+    
+    .menu { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+        background-color: #333; 
+        position: absolute; 
+        left: 0; 
+        padding: 20px; 
+    }
+    
+    .menu.active { 
+        display: block; 
+    }
+    
+    li { 
+        margin-bottom: 22px; 
+    }
+    
+    nav { 
+        position: relative; 
+    }
+    
+    /* Ajustes específicos para jogos e canvas */
+    #emoji-sniper-canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .game-controls {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .game-controls button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    /* Python debugger responsivo */
+    .py-code {
+        height: 180px;
+        font-size: 12px;
+    }
+    
+    .py-run {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    /* Footer responsivo */
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links li a {
+        font-size: 16px;
+        padding: 5px;
+    }
+}
 
-    .menu-toggle { display: block; }
-    .menu { display: none; flex-direction: column; width: 100%; background-color: #333; position: absolute; left: 0; padding: 20px; }
-    .menu.active { display: block; }
-    li { margin-bottom: 22px; }
-    nav { position: relative; }
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .content {
+        padding: 8px;
+    }
+    
+    .box {
+        height: 280px;
+        padding: 12px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.1em;
+    }
+    
+    .py-code {
+        height: 150px;
+        font-size: 11px;
+    }
+    
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+}
+
+/* Orientação landscape para celulares */
+@media (max-height: 500px) and (orientation: landscape) {
+    h1 {
+        font-size: 1.3em;
+        margin: 1vh 0;
+    }
+    
+    .box {
+        height: 250px;
+    }
+    
+    .hero {
+        padding: 10px 0;
+    }
 }
 
 /* ===================== ANIMAÇÕES ===================== */
@@ -341,8 +551,8 @@ h1 {
 }
 
     footer {
-        background: #222;
-        color: #fff;
+        background: #222 !important;
+        color: #fff !important;
         padding: 20px;
         text-align: center;
     }
@@ -358,17 +568,18 @@ h1 {
     }
 
     .footer-links li a {
-        color: #fff;
+        color: #fff !important;
         text-decoration: none;
         font-size: 14px;
         transition: color 0.3s;
     }
 
     .footer-links li a:hover {
-        color: #1da1f2; /* azul claro ao passar o mouse */
+        color: #00BFFF !important; /* azul claro ao passar o mouse */
     }
 
     .footer-links i {
         margin-right: 6px;
+        color: #fff !important;
     }
     
