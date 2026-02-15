@@ -29,7 +29,3 @@ python3 -m http.server 3000
 http://localhost:3000
 ```
 
-## Melhorarias a serem feitas:
-
-- exibir erros debug com js
-- adaptar pág a dispositivos móveis
