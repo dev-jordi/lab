@@ -305,7 +305,8 @@ h1 {
     
     .box {
         width: 100%;
-        height: 350px;
+        height: auto;
+        min-height: 250px;
         margin: 0 auto;
     }
     
@@ -342,8 +343,10 @@ h1 {
     
     .box {
         width: 100%;
-        height: 300px;
+        height: auto;
+        min-height: 200px;
         padding: 15px;
+        overflow: hidden;
     }
     
     h1 {
@@ -392,7 +395,8 @@ h1 {
     /* Ajustes específicos para jogos e canvas */
     #emoji-sniper-canvas {
         max-width: 100%;
-        height: auto;
+        height: auto !important;
+        width: 100% !important;
     }
     
     .game-controls {
@@ -435,7 +439,8 @@ h1 {
     }
     
     .box {
-        height: 280px;
+        height: auto;
+        min-height: 180px;
         padding: 12px;
     }
     
@@ -535,6 +540,7 @@ h1 {
     border: 1px solid rgba(0,191,255,0.3);
     padding: 8px;
     font-family: 'Courier New', monospace;
+    box-sizing: border-box;
 }
 
 .py-run {
