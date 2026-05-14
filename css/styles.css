@@ -11,25 +11,26 @@ main {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0d1117; /* dark elegante */
+    background: #0a0a0f;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-    color: #c9d1d9 !important; /* força cor clara */
+    color: #e0e0e0;
     text-align: center;
     width: 100vw;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    h1, h2 {
+}
+
+h1, h2 {
     padding-bottom: 10px;
     font-family: 'JetBrains Mono', monospace;
-    color: #c9d1d9 !important;
-    }
-    p {
-    color: #c9d1d9 !important;
-    }
+    color: #e0e0e0;
+}
+
+p {
+    color: #b0b0b0;
 }
 
 /* ===================== EFEITO DE RAIOS ===================== */
@@ -48,7 +49,7 @@ body {
     background-color: #00BFFF;
     width: 1px;
     height: 15px;
-    opacity: 0.9;
+    opacity: 0.7;
     animation: fall linear;
 }
 
@@ -59,19 +60,13 @@ body {
 
 /* ===================== MENU ===================== */
 header {
-    background-color: #111;
-    padding: 20px 0;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-}
-
-.thumbnail {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
+    border-bottom: 1px solid rgba(57, 255, 20, 0.15);
 }
 
 nav ul {
@@ -79,99 +74,123 @@ nav ul {
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 20px;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 1.2em;
+    color: #e0e0e0;
+    font-size: 0.9em;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 1px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     display: inline-block;
 }
 
 nav ul li a:hover {
-    background-color: #00BFFF;
-    border-radius: 5px;
+    background-color: rgba(57, 255, 20, 0.15);
+    color: #39ff14;
 }
 
 .special-button {
-    color: #fff;
-    background-color: #836FFF;
+    color: #fff !important;
+    background: linear-gradient(135deg, #6c3ce0, #836FFF);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .special-button:hover {
-    background-color: #00BFFF;
-}
-
-.portfolio-link {
-    color: #fff;
-    background-color: #00BFFF;
-    padding: 10px 20px;
-    border-radius: 5px;
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.portfolio-link:hover {
-    background-color: #836FFF;
-    animation: none;
-    box-shadow: 0 0 20px #836FFF;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 5px rgba(0,191,255,0.4); }
-    50% { box-shadow: 0 0 15px rgba(0,191,255,0.8); }
-}
-
-.about-link {
-    color: #fff;
-    background-color: #e85d04;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.about-link:hover {
-    background-color: #f48c06;
+    background: linear-gradient(135deg, #836FFF, #a78bfa) !important;
+    box-shadow: 0 0 20px rgba(131, 111, 255, 0.5);
+    color: #fff !important;
 }
 
 /* Menu toggle mobile */
 .menu-toggle {
     display: none;
-    background-color: #333;
-    color: white;
+    background: transparent;
+    color: #39ff14;
     padding: 10px;
     cursor: pointer;
     font-size: 2em;
 }
 
-/* ===================== TÍTULOS ===================== */
-h1 {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 4vh 0;
-    letter-spacing: 5px;
+.portfolio-link {
+    color: #fff !important;
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    padding: 10px 18px;
+    border-radius: 8px;
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.portfolio-link:hover {
+    background: linear-gradient(135deg, #06b6d4, #22d3ee) !important;
+    animation: none;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    color: #fff !important;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(6, 182, 212, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(6, 182, 212, 0.6); }
+}
+
+.about-link {
+    color: #fff !important;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.about-link:hover {
+    background: linear-gradient(135deg, #ef4444, #f87171) !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    color: #fff !important;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+    padding: 60px 20px 40px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #00BFFF;
-    text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.6),
-        4px 4px 8px rgba(0,0,0,0.5),
-        6px 6px 12px rgba(0,0,0,0.4),
-        8px 8px 16px rgba(0,0,0,0.3);
-    animation: glow 15s infinite alternate;
+}
+
+.hero h1 .gradient-text {
+    background: linear-gradient(135deg, #39ff14, #06b6d4, #836FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 10px;
 }
 
 /* ===================== CONTENT ===================== */
 .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
     width: 100%;
     padding: 20px;
@@ -184,22 +203,27 @@ h1 {
     max-width: 100%;
     height: auto;
     min-height: 400px;
-    background-color: rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0,191,255,0.3);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(57, 255, 20, 0.1);
+    transition: all 0.4s ease;
     overflow: visible;
 }
 
 .box:hover {
-    border-color: #00BFFF;
-    box-shadow: 0 0 40px #00BFFF;
+    border-color: rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 40px rgba(57, 255, 20, 0.15), 0 8px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
+}
+
+.box h2 {
+    color: #39ff14;
 }
 
 /* Responsividade de conteúdos dentro das boxes */
@@ -216,7 +240,7 @@ h1 {
 .box .box-content {
     width: 90%;
     height: 90%;
-    display: flex;              /* necessário para align-items e justify-content */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -241,22 +265,23 @@ h1 {
 /* ===================== PROFILE / CENTER TEXT ===================== */
 .center-text {
     display: flex;
-    flex-direction: column;   /* foto em cima, texto embaixo */
-    align-items: center;      /* centraliza tudo */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin: 25px auto;
-    max-width: 700px;         /* largura máxima do bloco */
-    padding: 15px;
-    background: rgba(255,255,255,0.05); /* fundo leve translúcido */
-    border-radius: 15px;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    border: 1px solid rgba(0,191,255,0.3);
+    border: 1px solid rgba(57, 255, 20, 0.1);
     transition: all 0.3s ease;
 }
 
 .center-text:hover {
-    border-color: #00BFFF;
-    box-shadow: 0 0 30px #00BFFF;
+    border-color: rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
 }
 
 /* ===================== PROFILE IMAGE ===================== */
@@ -265,23 +290,23 @@ h1 {
     height: 150px;
     object-fit: cover;
     border-radius: 50%;  
-    border: 3px solid #00BFFF;
+    border: 3px solid #39ff14;
     margin-bottom: 20px;
-    box-shadow: 0 0 15px rgba(0,191,255,0.6);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 25px #00BFFF;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
 }
 
 /* ===================== PROFILE TEXT ===================== */
 .center-text p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #ddd;
-    margin-bottom: 12px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #b0b0b0;
+    margin-bottom: 8px;
 }
 
 /* ===================== RESPONSIVIDADE ===================== */
@@ -295,25 +320,23 @@ h1 {
     
     .box {
         width: calc(50% - 15px);
-        height: 400px;
     }
     
-    h1 {
+    .hero h1 {
         font-size: 2.5em;
-        margin: 3vh 0;
     }
 }
 
 /* Tablets pequenos (600px - 768px) */
 @media (max-width: 768px) {
     header {
-        padding: 15px 0;
+        padding: 12px 0;
     }
     
     .menu-toggle {
         display: block;
         position: absolute;
-        top: 15px;
+        top: 12px;
         right: 20px;
         z-index: 101;
     }
@@ -325,7 +348,7 @@ h1 {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #111;
+        background: rgba(10, 10, 15, 0.98);
         padding: 20px 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
@@ -335,20 +358,18 @@ h1 {
     }
     
     nav ul li {
-        margin: 10px 0;
+        margin: 8px 0;
         text-align: center;
     }
     
     .box {
         width: 100%;
-        height: auto;
-        min-height: 250px;
-        margin: 0 auto;
+        min-height: unset;
     }
     
-    h1 {
+    .hero h1 {
         font-size: 2.2em;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
     }
     
     .center-text {
@@ -368,8 +389,12 @@ h1 {
         font-size: 14px;
     }
     
-    header {
-        padding: 10px 0;
+    .hero {
+        padding: 40px 15px 25px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8em;
     }
     
     .content {
@@ -383,12 +408,6 @@ h1 {
         min-height: unset;
         padding: 15px;
         overflow: visible;
-    }
-    
-    h1 {
-        font-size: 1.8em;
-        letter-spacing: 2px;
-        margin: 2vh 0;
     }
     
     h2 {
@@ -410,7 +429,7 @@ h1 {
         display: none; 
         flex-direction: column; 
         width: 100%; 
-        background-color: #333; 
+        background: rgba(10, 10, 15, 0.98);
         position: absolute; 
         left: 0; 
         padding: 20px; 
@@ -421,14 +440,14 @@ h1 {
     }
     
     li { 
-        margin-bottom: 22px; 
+        margin-bottom: 16px; 
     }
     
     nav { 
         position: relative; 
     }
     
-    /* Ajustes específicos para jogos e canvas */
+    /* Canvas */
     #emoji-sniper-canvas {
         max-width: 100%;
         height: auto !important;
@@ -445,7 +464,7 @@ h1 {
         font-size: 12px;
     }
     
-    /* Python debugger responsivo */
+    /* Python debugger */
     .py-code {
         height: 180px;
         font-size: 12px;
@@ -461,16 +480,7 @@ h1 {
         font-size: 14px;
     }
     
-    /* Portfólio responsivo */
-    .portfolio-section {
-        padding: 15px;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Footer responsivo */
+    /* Footer */
     .footer-links {
         flex-direction: column;
         gap: 10px;
@@ -489,12 +499,10 @@ h1 {
     }
     
     .box {
-        height: auto;
-        min-height: unset;
         padding: 12px;
     }
     
-    h1 {
+    .hero h1 {
         font-size: 1.5em;
     }
     
@@ -508,136 +516,76 @@ h1 {
     }
     
     nav ul li a {
-        font-size: 1em;
+        font-size: 0.85em;
         padding: 8px 15px;
     }
     
     .portfolio-card {
         padding: 16px;
     }
-    
-    .portfolio-icon {
-        font-size: 2em;
-    }
 }
 
-/* Orientação landscape para celulares */
+/* Landscape */
 @media (max-height: 500px) and (orientation: landscape) {
-    h1 {
+    .hero h1 {
         font-size: 1.3em;
-        margin: 1vh 0;
-    }
-    
-    .box {
-        height: 250px;
     }
     
     .hero {
-        padding: 10px 0;
+        padding: 20px 10px 10px;
+    }
+    
+    .box {
+        min-height: unset;
     }
 }
 
-/* ===================== PORTFÓLIO ===================== */
-.portfolio-section {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.portfolio-section > h2 {
-    margin-bottom: 20px;
-    color: #00BFFF !important;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.portfolio-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(0,191,255,0.3);
-    border-radius: 12px;
-    padding: 24px;
-    text-decoration: none;
-    color: #c9d1d9;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.portfolio-card:hover {
-    border-color: #00BFFF;
-    box-shadow: 0 0 30px rgba(0,191,255,0.4);
-    transform: translateY(-4px);
-}
-
-.portfolio-icon {
-    font-size: 2.5em;
-    margin-bottom: 12px;
-}
-
-.portfolio-card h3 {
-    color: #fff;
-    margin-bottom: 8px;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.portfolio-card p {
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-
 /* ===================== ANIMAÇÕES ===================== */
-@keyframes glow {
-    0% { text-shadow: 0px 0px 5px rgba(0,0,255,0.6), -5px -5px 10px rgba(0,191,255,0.5), 5px 5px 15px rgba(0,0,255,0.4), -10px -10px 20px rgba(0,191,255,0.3); }
-    50% { text-shadow: 0px 0px 15px rgba(0,0,255,1), 10px -10px 20px rgba(0,191,255,0.8), -10px 10px 30px rgba(0,0,255,0.7), 15px 15px 40px rgba(0,191,255,0.6); }
-    100% { text-shadow: 0px 0px 20px #00BFFF, -15px 15px 30px #00BFFF, 15px -15px 40px #00BFFF, -20px -20px 50px #00BFFF; }
-}
-
 @keyframes _boxGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* ===================== FOOTER ===================== */
+/* ===================== GAME & DEBUGGER ===================== */
 #canvas { position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; margin: 0 auto; }
 
 #emoji-sniper-canvas {
-  display: block;
-  margin: 0 auto; /* centraliza horizontalmente */
-  border: 2px solid #333;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #1a1a2e;
+    border-radius: 8px;
 }
 
 .game-controls {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .game-controls button {
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
-    background-color: #00BFFF;
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
     color: #fff;
     cursor: pointer;
     font-family: 'JetBrains Mono', monospace;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .game-controls button:hover {
-    background-color: #836FFF;
+    background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    transform: translateY(-2px);
 }
+
 .py-debugger {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* alinha conteúdo à esquerda */
+    align-items: flex-start;
     gap: 8px;
     font-family: 'Courier New', monospace;
 }
@@ -645,59 +593,71 @@ h1 {
 .py-code {
     width: 100%;
     max-width: 400px;
-    color: #fff;   /* texto branco */
-    background: #0d1117;
+    color: #39ff14;
+    background: #0a0a0f;
     height: 230px;
-    border-radius: 6px;
-    border: 1px solid rgba(0,191,255,0.3);
-    padding: 8px;
-    font-family: 'Courier New', monospace;
+    border-radius: 8px;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    padding: 10px;
+    font-family: 'JetBrains Mono', monospace;
     box-sizing: border-box;
 }
 
 .py-run {
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
     border: none;
-    background-color: #00BFFF;
+    background: linear-gradient(135deg, #16a34a, #22c55e);
     color: #fff;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .py-run:hover {
-    background-color: #2575fc;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
 }
 
-    footer {
-        background: #222 !important;
-        color: #fff !important;
-        padding: 20px;
-        text-align: center;
-    }
+/* ===================== FOOTER ===================== */
+footer {
+    background: rgba(10, 10, 15, 0.95);
+    border-top: 1px solid rgba(57, 255, 20, 0.1);
+    color: #e0e0e0;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
 
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 15px 0 0;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
 
-    .footer-links li a {
-        color: #fff !important;
-        text-decoration: none;
-        font-size: 14px;
-        transition: color 0.3s;
-    }
+.footer-links li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
 
-    .footer-links li a:hover {
-        color: #00BFFF !important; /* azul claro ao passar o mouse */
-    }
+.footer-links li a:hover {
+    color: #39ff14;
+}
 
-    .footer-links i {
-        margin-right: 6px;
-        color: #fff !important;
-    }
-    
+.footer-links i {
+    margin-right: 6px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
