@@ -7,6 +7,7 @@
 
 main {
     flex: 1;
+    overflow: hidden;
 }
 
 body {
@@ -14,11 +15,12 @@ body {
     background: #0a0a0f;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     color: #e0e0e0;
     text-align: center;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin: 0;
     padding: 0;
 }
@@ -154,7 +156,7 @@ nav ul li a:hover {
 
 /* ===================== HERO ===================== */
 .hero {
-    padding: 60px 20px 40px;
+    padding: 20px 20px 10px;
     position: relative;
 }
 
@@ -190,10 +192,11 @@ nav ul li a:hover {
 .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -202,10 +205,10 @@ nav ul li a:hover {
     width: 500px;
     max-width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 250px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -624,9 +627,8 @@ footer {
     background: rgba(10, 10, 15, 0.95);
     border-top: 1px solid rgba(57, 255, 20, 0.1);
     color: #e0e0e0;
-    padding: 30px 20px;
+    padding: 15px 20px;
     text-align: center;
-    margin-top: 40px;
 }
 
 .footer-links {
