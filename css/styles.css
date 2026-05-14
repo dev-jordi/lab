@@ -627,18 +627,18 @@ footer {
     background: rgba(10, 10, 15, 0.95);
     border-top: 1px solid rgba(57, 255, 20, 0.1);
     color: #e0e0e0;
-    padding: 15px 20px;
+    padding: 8px 20px;
     text-align: center;
 }
 
 .footer-links {
     list-style: none;
     padding: 0;
-    margin: 15px 0 0;
+    margin: 5px 0 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 12px;
 }
 
 .footer-links li a {
